@@ -1,5 +1,8 @@
 import React ,{useEffect} from 'react';
 
+import './Mensaje.css';
+
+
 function Mensaje(props){
 
 useEffect(()=>{
@@ -9,7 +12,7 @@ useEffect(()=>{
 });
     return(
         <>
-        <h2>{props.msg_exitoso}</h2>
+        <h2 className="mensajeIndicador">{props.msg_exitoso}</h2>
         </>
     )
 }

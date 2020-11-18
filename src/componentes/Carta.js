@@ -2,7 +2,8 @@ import React ,{useState} from 'react';
 import Axios from 'axios';
 import {Link, useHistory, Redirect} from 'react-router-dom';
 import './Carta.css';
-
+import EditIcon from '@material-ui/icons/Edit';
+import DeleteForeverIcon from '@material-ui/icons/DeleteForever';
 
 
 function Carta({nombre, genero ,consola, id, hacerCambios}){
@@ -36,8 +37,14 @@ function Carta({nombre, genero ,consola, id, hacerCambios}){
                         <p>{consola}</p>
                     </div>
                     <div className="botones">
-                    <Link className="editar" to={`/juegos/ver/${id}`} >Editar</Link>
-                    <button onClick={()=>borrarCarta(id)}>Borrar</button>
+                    <Link className="editar" to={`juegos/ver/${id}`} >Editar
+                    <EditIcon  />
+                    </Link>
+                    <button 
+                    className="borrar"
+                    onClick={()=>borrarCarta(id)}>Borrar
+                    <DeleteForeverIcon  />
+                    </button>
                     </div>
                 </div>
             </div>

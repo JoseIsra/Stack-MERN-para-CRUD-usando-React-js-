@@ -23,18 +23,20 @@ function ListaJuegos(){
     },[]);
 
     return(
-            <main>
-
+            <section className="heart">
+                <div className="titulos_listados">
                 <h1 className="titulo">CONTEMPLA LO AGREGADO</h1>
-                <Link className ="volver_crud" to="/crud" >Volver al CRUD</Link>
-                <div className="games__container">
+                <Link className ="enlace" to="/crud" >Volver al CRUD</Link>
+                </div>
+
+            <div className="games__container">
                     {games.map(game => {
                         return <Carta 
                         hacerCambios={hacerCambios}
                         key= {game.id} {...game} />
                     })}
-                </div>
-            </main>
+                </div>  
+            </section>
         );
 
 }

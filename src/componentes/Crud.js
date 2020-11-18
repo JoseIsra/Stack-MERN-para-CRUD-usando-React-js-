@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import React, {useState} from 'react';
 import './Crud.css';
+import SaveIcon from '@material-ui/icons/Save';
 
 import Mensaje from './Mensaje';
 function Crud(){
@@ -45,40 +46,51 @@ function Crud(){
 
 
     return(
-        <section >
-            {modal && <Mensaje msg_exitoso={"Juego guardado"} cerrarModal ={cerrarModal} /> }
+        <section>
+            <h1 className="crudSaludo">AGREGAR UN VIDEOJUEGO DEBES </h1>
+<Link className="enlace" to="/juegos">Ver lista de juegos</Link>
+            {modal && <Mensaje className="mensaje"    msg_exitoso={"Juego guardado"} cerrarModal ={cerrarModal} /> }
             <div className="crud__container">
+                <div className="encabezados">
+                <h1>JUEGO NUEVO</h1>
+                <h2>{game.nombre}</h2>
+                </div>
             <div className="crud__content">
-    <h1>{game.nombre}</h1>
-
-                <form>
-                    <label>Nombre</label>
+                <form autoComplete="off">
+                    <p>Nombre</p>
                     <input type="text" 
                     placeholder="el juego es..." 
+                    required
                     value={game.nombre}
                     onChange = {manejarInput}
                     name="nombre"
                     />
-                    <label>Género</label>
+                    
+                    <p>Género</p>
                     <input type="text" 
                     placeholder="el género es..." 
+                    required
                     value={game.genero}
                     onChange = {manejarInput}
                     name="genero"
                     />
-                    <label>Consolas</label>
+                    
+                    <p>Consolas</p>
                     <input type="text" 
                     placeholder="consolas compatibles..." 
                     value={game.consola}
                     onChange = {manejarInput}
                     name="consola"
+                    required
                     />
+                    
                     <button className="btn-guardar" 
                     onClick={enviarData}
-                    type="submit">GUARDAR </button>
+                    type="submit">GUARDAR 
+                    <SaveIcon  />
+                    </button>
                 </form>
             </div>
-            <Link className="enlace_ver_juegos" to="/juegos">Ver lista de juegos</Link>
             </div>
         </section>
 

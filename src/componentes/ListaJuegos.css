@@ -1,8 +1,37 @@
 
+
+.heart
+{
+    position: relative;
+    color:white;
+    background-color:black ;
+    display:flex;
+    flex-direction: column;
+    overflow: hidden;
+
+}
+
+
+.titulos_listados
+{
+    position:relative;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    width:100%;
+}
+
+.titulos_listados h1{
+    font-size:2rem;
+    font-weight: 900;
+}
+
 .games__container
 {
+    position:relative;
+    top:2rem;
+    width:100%;
     display:grid;
     grid-template-columns:  1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    
 }

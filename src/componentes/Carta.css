@@ -1,16 +1,14 @@
-*{
-    border:1px solid black;
-
-}
 
 .carta
 {
     display:flex;
     justify-content: center;
     align-items: center;
-    width:250px;
-    height:400px;
+    width:340px;
+    height:420px;
     margin:30px 15px;
+    border:1px solid gray;
+    border-radius:15px;
 }
 
 .carta__contenido
@@ -20,8 +18,82 @@
 }
 .carta__contenido h4{
     text-align: center;
-    font-size:1.5rem;
+    font-size:1.6rem;
 }
 
 
+.campos
+{
+    margin:0;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.campos label{
+    margin:0 10px;
+    width:150px;
+    border-bottom:1px solid white;
+}
+
+.campos p{
+    position: relative;
+    margin:10px 60px;
+}
+
+.botones
+{
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    padding:5px;
+    margin-top:1rem;
+}
+
+.botones .editar,
+.botones .borrar
+{
+    padding:5px;
+    display:block;
+    font-size:1em;
+    width:100px;
+    color:gray;
+    outline:none;
+    text-decoration:none;    
+    display:flex; 
+    align-items: center;
+    justify-content: space-around;
+    cursor:pointer;
+    transition:0.2s ease;
+}
+
+.botones .editar
+{
+    border:1px solid gray;
+    border-radius:15px;
+}
+
+.botones .editar:hover
+{
+    color:white;
+    box-shadow: 0px 0 5px rgb(175, 187, 71),
+    0 0 8px rgb(175, 187, 71),
+    3px 3px 10px rgb(175, 187, 71),
+    -3px -3px 12px rgb(175, 187, 71);
+}
+
+.botones .borrar
+{
+    background-color:transparent;
+    border:1px solid gray;
+    border-radius:15px;
+}
+
+.botones .borrar:hover{
+    color:white;
+    box-shadow: 0 0 5px rgb(207, 44, 44),
+    0 0 9px rgb(207, 44, 44),
+    0 0 15px rgb(207, 44, 44);
+}
 

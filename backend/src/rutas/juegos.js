@@ -32,7 +32,7 @@ router.get("/ver/:id", async(req, res )=>{
         res.end();
     });
     
-router.post('/edit/:id',async(req,res)=>{
+router.post('/ver/:id',async(req,res)=>{
     const {id} = req.params;
     const {nombre, genero, consola} = req.body;
         await Juego.update({
@@ -44,6 +44,7 @@ router.post('/edit/:id',async(req,res)=>{
                 id:id
             }
         });
+        res.end();
     });
 
 

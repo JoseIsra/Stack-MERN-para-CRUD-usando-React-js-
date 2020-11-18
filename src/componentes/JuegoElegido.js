@@ -1,7 +1,9 @@
 import React, {useEffect, useState } from 'react';
 import axios from 'axios';
 import  { Link, useHistory, useParams } from 'react-router-dom';
+import SaveIcon from '@material-ui/icons/Save';
 
+import './JuegoElegido.css';
 
 function JuegoElegido() {
     const [juegoAEditar, setJuegoAEditar] = useState({
@@ -19,18 +21,7 @@ function JuegoElegido() {
             });
         }
 
-        const enviarForm = ()=>{
         
-            axios.post(`http://localhost:3001/juegos/edit/${id}`,{
-                nombre:juegoAEditar.nombre,
-                genero:juegoAEditar.genero,
-                consola:juegoAEditar.consola,
-            }).then(()=>{
-                history.push('/');
-            }) 
-        }
-
-
         //TRAEMOS LOS DATOS DE LA BD DEL JUEGO CON LA ID RESPECTIVA
         useEffect(()=>{
             axios.get(`http://localhost:3001/juegos/ver/${id}`)
@@ -44,28 +35,44 @@ function JuegoElegido() {
             })
         },[]);
 
+        const enviarForm = (e)=>{
+            e.preventDefault();
+            axios.post(`http://localhost:3001/juegos/ver/${id}`,{
+                nombre:juegoAEditar.nombre,
+                genero:juegoAEditar.genero,
+                consola:juegoAEditar.consola,
+            }).then(res=>{
+                
+                history.push('/juegos');
+            }) 
+        }
+
+
     return (
-        <section >
-            <Link className="enlace_ver_juegos" to="/juegos">Volver a lista de juegos</Link>
-
+        <section className="crud-body">
+            <Link className="enlace" to="/juegos">Volver a lista de juegos</Link>
+            <h1 className="edicion">ZONA DE EDICION</h1>
             <div className="crud__container">
-                <div className="crud__content">
-                    <h1>{juegoAEditar.nombre}</h1>
+            <div className="encabezados">
+                <h1>JUEGO</h1>
+                <h2>{juegoAEditar.nombre}</h2>
+                </div>
 
-                    <form >
-                        <label>Nombre</label>
+                <div className="crud__content">
+                    <form autoComplete="off" onSubmit={enviarForm}>
+                        <p>Nombre</p>
                         <input type="text"
                             value={juegoAEditar.nombre}
                             onChange={manejarInput}
                             name="nombre"
                         />
-                        <label>Género</label>
+                        <p>Género</p>
                         <input type="text"
                             value={juegoAEditar.genero}
                             onChange={manejarInput}
                             name="genero"
                         />
-                        <label>Consolas</label>
+                        <p>Consolas</p>
                         <input type="text"
                             value={juegoAEditar.consola}
                             onChange={manejarInput}
@@ -73,8 +80,9 @@ function JuegoElegido() {
                         />
                         <button className="btn-guardar"
                             type="submit" 
-                            onClick={enviarForm}
-                            >GUARDAR </button>
+                            >GUARDAR
+                        <SaveIcon />    
+                        </button>
                     </form>
                 </div>
             </div>
