@@ -1,0 +1,27 @@
+*{
+    border:1px solid black;
+
+}
+
+.carta
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:250px;
+    height:400px;
+    margin:30px 15px;
+}
+
+.carta__contenido
+{
+    position: relative;
+    width:100%;
+}
+.carta__contenido h4{
+    text-align: center;
+    font-size:1.5rem;
+}
+
+
+
