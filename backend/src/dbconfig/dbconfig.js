@@ -2,7 +2,7 @@ const {Sequelize} = require('sequelize');
 const juegoModelo = require('../modelos/juego');
 
 
-const sequelize = new Sequelize('gameboy','root','54321',{
+const sequelize = new Sequelize('DB_NAME','DB_USER','DB_PASSWORD',{
     host:'localhost',
     dialect:'mysql'
 });
