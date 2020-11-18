@@ -2,6 +2,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import './Inicio.css';
+import EmojiPeopleIcon from '@material-ui/icons/EmojiPeople';
 
 function Inicio(){
 
@@ -18,8 +19,10 @@ function Inicio(){
                 <li>N---- NODE ✈✈</li>
             </ul>
 
-            <Link className="enlace_crud" to="/crud">Ir al CRUD </Link>
-    </div>  
+            <Link className="enlace_crud" to="/crud">Ir al CRUD 
+            <EmojiPeopleIcon />
+            </Link>
+    </div>              
 );
 }
 

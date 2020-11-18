@@ -1,0 +1,32 @@
+.portada
+{
+background-color: black;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+min-height: 100vh;
+overflow: hidden;
+color:white;
+font-size:1.5rem;
+}
+
+
+.portada h1{
+margin-bottom: 40px;
+}
+
+.enlace_crud
+{
+    text-decoration:none;
+    padding:4px;
+    display:block;
+    width:250px;
+    border:1px solid white;
+    outline:none;
+    color:white;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    cursor:pointer;
+}
